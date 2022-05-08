@@ -131,7 +131,6 @@ export default {
           bio: this.bio,
           saved: this.saved
         }
-                
       store.dispatch('updateUser',[payload]);      
     }
   }
