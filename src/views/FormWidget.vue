@@ -66,7 +66,7 @@ export default {
   name: 'FormWidget',
   data() {
     return {
-      id: this.$route.params.id,
+      id: 1,
       username: {
         type: String,
         required: true,
@@ -96,15 +96,17 @@ export default {
   methods: {
     async getUserInformation() {
       
-      let url = 'https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/' + this.id;
+      let url = 'https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/';
       
       try {
         let res = await axios.get(url);
         
-        this.username = res.data.username;
-        this.email = res.data.email;
-        this.password = res.data.password;
-        this.bio = res.data.bio;
+        console.log(res);
+        
+        this.username = res.data[0].username;
+        this.email = res.data[0].email;
+        this.password = res.data[0].password;
+        this.bio = res.data[0].bio;
         
         let payload = {
           username: this.username,
@@ -120,7 +122,7 @@ export default {
       }
     },
     updateUser() {
-                
+      this.saved = true;          
         let payload = {
           id: this.id,
           username: this.username,
@@ -129,10 +131,8 @@ export default {
           bio: this.bio,
           saved: this.saved
         }
-        
-        console.log(payload);
-        
-      store.dispatch('updateUser',[payload]);
+                
+      store.dispatch('updateUser',[payload]);      
     }
   }
 }

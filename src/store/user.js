@@ -13,6 +13,7 @@ export const store = createStore({
     }
   },  
   getters: {
+    id: state => state.id,
     username: state => state.username,
     email: state => state.email,
     password: state => state.password,
@@ -29,13 +30,12 @@ export const store = createStore({
       state.bio = payload.bio;
     },
     SET_SAVED(state, bool) {
-      state.saved = bool;
-      console.log(state.saved);
+      state.saved = bool;      
     }
   },
   actions: {
-    async getUser({commit}) {
-      let url ='https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo';
+    async getUser({commit}, id) {
+      let url ='https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/' + id
       
       try {
         let res = await axios.get(url);         
@@ -51,11 +51,12 @@ export const store = createStore({
       commit('SET_USER', [payload]);
     },
     async updateUser({commit}, [payload]){
-      let url = 'https://mockapi.io/projects/6276eded2f94a1d706084670/api/vue/userinfo/' + payload.id;
+      let url = 'https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/' + payload.id;
       
       try {
         commit('SET_USER', [payload]);
         commit('SET_SAVED', [true]);
+        delete payload.saved;
         await axios.put(url, payload);        
       }
       catch (e) {
