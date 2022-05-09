@@ -78,6 +78,10 @@ button.btn-long {
   border-top: 0;
 }
 
+form input {
+  margin-bottom: 15px;
+}
+
 @media (min-width: 768px) {
   header .navbar-brand img {
     height: 80px;

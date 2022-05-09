@@ -1,6 +1,6 @@
 import {createWebHistory, createRouter} from "vue-router";
 
-import ToDo from '@/views/TodoPage.vue';
+import TodoPage from '@/views/TodoPage.vue';
 import PostsPage from '@/views/PostsPage.vue';
 import UserInfoPage from '@/views/UserInfoPage.vue';
 import NotFound from '@/views/NotFound.vue';
@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/',
     name: 'ToDo',
-    component: ToDo,
+    component: TodoPage,
   },
   {
     path: '/post',
