@@ -70,8 +70,13 @@ button.btn-long {
   width: 100%;
 }
 
+.modal-content {
+  border-radius: 0;
+}
+
 .modal-header {
   border-bottom: 0;
+  border-radius: 0;
 }
 
 .modal-footer {
