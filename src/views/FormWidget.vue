@@ -66,28 +66,28 @@ export default {
   name: 'FormWidget',
   data() {
     return {
-      id: store.state.id,
+      id: store.getters.id,
       username: {
         type: String,
         required: true,
-        value: store.state.username
+        value: store.getters.username
       },
       email: {
         type: String,
         required: true,
-        value: store.state.email
+        value: store.getters.email
       },
       password: {
         type: String,
         required: true,
-        value: store.state.password
+        value: store.getters.password
       },
       bio: {
         type: String,
         required: true,
-        value: store.state.bio
+        value: store.getters.bio
       },      
-      saved: store.state.saved,
+      saved: store.getters.saved,
     }
   },
   mounted() {
