@@ -134,7 +134,7 @@ export default {
       try {
         let res = await axios.get(url);
         this.todos = res.data;
-        store.commit('SET_TODO', res.data);
+        store.dispatch('getToDoList', res.data);
       }
       catch (error) {
         console.log(error);
