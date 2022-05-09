@@ -28,7 +28,7 @@ export const store = createStore({
     }    
   },
   actions: {
-    getToDoList({commit}, data) {
+    async getToDoList({commit}, data) {
         commit('SET_TODO', data);      
     },
     async getTodo() {
