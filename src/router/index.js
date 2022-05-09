@@ -17,7 +17,7 @@ const routes = [
     component: PostsPage
   },
   {
-    path: '/users/1',
+    path: '/users/:id',
     name: 'User',
     component: UserInfoPage
   },

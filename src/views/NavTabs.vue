@@ -7,7 +7,7 @@
           <nav class="nav nav-pills">
             <router-link to="/">To Do</router-link>
             <router-link to="/post">Posts</router-link>
-            <router-link to="/users/1">User Info</router-link>
+            <router-link :to="'/users/'+id">User Info</router-link>
           </nav>
         </div>
       </div>
@@ -27,7 +27,6 @@ export default {
   },
   async mounted() {    
     this.id = await store.dispatch('getUser');
-    console.log(this.id);
   },
   methods: {
     
