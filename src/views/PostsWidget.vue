@@ -4,24 +4,27 @@
     <div class="container">
       <div class="row">
         <div class="col-12">          
-          <form @submit.prevent="filterTable(search.value)" class="row">
-            <div class="col-12 col-md-3">
+          <form @submit.prevent="filterTable(search.value)" class="row search-bar">
+            <div class="col-12 col-sm-4 col-md-3">
               <input class="form-control" type="text" name="search" 
               v-model="search.value"
               />
             </div>
-            <div class="col-12 col-md-1">
+            <div class="col-12 col-sm-3 col-md-1">
               <button type="submit" class="btn btn-primary">
                 Search
               </button>
             </div>
-            <div class="col-12 col-md-1">
+            <div class="col-12 col-sm-3 col-md-1">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#form-modal">
                 <span><i class="fa-solid fa-plus"></i></span>
               </button>
             </div>
           </form>
-          <table class="table table-striped">
+          <h3 class="visible-xs text-center">
+            Posts list
+          </h3>
+          <table class="table table-striped table-posts">
             <thead>
               <th scope="col">Id</th>
               <th scope="col">Name</th>
@@ -66,7 +69,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">New ToDo</h5>
+            <h5 class="modal-title">New Post</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
             ref="closeThis">
             </button>
@@ -88,7 +91,7 @@
                     />
                   </div>
                   <div class="col-md-4">
-                    <input type="text" name="text" placeholder="todo text..." class="form-control" 
+                    <input type="text" name="text" placeholder="text..." class="form-control" 
                     v-model="text.value"
                     />
                   </div>

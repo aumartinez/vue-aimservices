@@ -78,13 +78,57 @@ button.btn-long {
   border-top: 0;
 }
 
-form input {
+form.search-bar button,
+form.search-bar input {
   margin-bottom: 15px;
+  width: 100%;
+}
+
+table.table-posts thead {
+  display: none;
+}
+
+table.table-posts tr td {
+  display: block;
+  border-bottom-width: 0;
+}
+
+table.table-posts tr td:last-child {
+  text-align: center;  
+}
+
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block;
+  }
 }
 
 @media (min-width: 768px) {
+  .visible-xs {    
+    display: none;
+  }
+  
   header .navbar-brand img {
     height: 80px;
   }
+  
+  form.search-bar button {
+    margin-bottom: 15px;
+    width: auto;
+  }
+  
+  table.table-posts thead {
+    display: table-row;
+  }
+  
+  table.table-posts tr td {
+    display: table-cell ;
+    border-bottom-width: 1;
+  }
+
+  table.table-posts tr td:last-child {
+    text-align: center;  
+  }
+
 }
 </style>

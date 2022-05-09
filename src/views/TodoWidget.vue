@@ -4,18 +4,18 @@
     <div class="container">
       <div class="row">
         <div class="col-12">          
-          <form @submit.prevent="filterTable(search.value)" class="row">
-            <div class="col-12 col-md-3">
+          <form @submit.prevent="filterTable(search.value)" class="row search-bar">
+            <div class="col-12 col-sm-4 col-md-3">
               <input class="form-control" type="text" name="search" 
               v-model="search.value"
               />
             </div>
-            <div class="col-12 col-md-1">
+            <div class="col-12 col-sm-3 col-md-1">
               <button type="submit" class="btn btn-primary">
                 Search
               </button>
             </div>
-            <div class="col-12 col-md-1">
+            <div class="col-12 col-sm-3 col-md-1">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#form-modal">
                 <span><i class="fa-solid fa-plus"></i></span>
               </button>
