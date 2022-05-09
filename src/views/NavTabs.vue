@@ -25,8 +25,9 @@ export default {
       id: this.$route.params.id,
     }
   },
-  async mounted() {
+  async mounted() {    
     this.id = await store.dispatch('getUser');
+    console.log(this.id);
   },
   methods: {
     

@@ -66,7 +66,7 @@ export default {
   name: 'FormWidget',
   data() {
     return {
-      id: 1,
+      id: store.state.id,
       username: {
         type: String,
         required: true,
@@ -96,17 +96,15 @@ export default {
   methods: {
     async getUserInformation() {
       
-      let url = 'https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/';
+      let url = 'https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/' + this.id;
       
       try {
         let res = await axios.get(url);
-        
-        console.log(res);
-        
-        this.username = res.data[0].username;
-        this.email = res.data[0].email;
-        this.password = res.data[0].password;
-        this.bio = res.data[0].bio;
+                
+        this.username = res.data.username;
+        this.email = res.data.email;
+        this.password = res.data.password;
+        this.bio = res.data.bio;
         
         let payload = {
           username: this.username,
@@ -117,8 +115,8 @@ export default {
         
         store.dispatch('setUser', [payload]);
       }
-      catch (e) {
-        console.log(e);        
+      catch (error) {
+        console.log(error);        
       }
     },
     updateUser() {

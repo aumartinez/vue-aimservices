@@ -34,21 +34,22 @@ export const store = createStore({
     }
   },
   actions: {
-    async getUser({commit}, id) {
-      let url ='https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/' + id
-      
+    async getUser({commit}) {
       try {
-        let res = await axios.get(url);         
-        commit('SET_USERID', res.data[0].id);
-        
-        return res.data[0].id;
-      }
-      catch (e) {
-        console.log(e);
-      }
+         let url = 'https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/';
+         
+         let res = await axios.get(url);
+         let id = res.data[0].id;
+         commit('SET_USERID', id);
+         
+         return id;
+       }
+       catch(e) {
+         console.log(e);
+       }
     },
-    setUser({commit}, [payload]) {
-      commit('SET_USER', [payload]);
+    setUser({commit}, [payload]) {      
+     commit('SET_USER', [payload]);
     },
     async updateUser({commit}, [payload]){
       let url = 'https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/' + payload.id;
