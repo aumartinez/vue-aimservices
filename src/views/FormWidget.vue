@@ -98,7 +98,7 @@ export default {
       
       let url = 'https://6276eded2f94a1d70608466f.mockapi.io/api/vue/userinfo/' + this.id;
       
-      try {
+      try {        
         let res = await axios.get(url);
                 
         this.username = res.data.username;
@@ -133,5 +133,4 @@ export default {
     }
   }
 }
-
 </script>
