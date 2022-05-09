@@ -163,7 +163,7 @@ export default {
       try {
         let res = await axios.get(url);
         this.todos = res.data;
-        store.commit('SEARCH_TODO', res.data);          
+        store.dispatch('searchTodo', res.data);          
       }
       catch (e) {
         this.todos = [0];
