@@ -1,7 +1,9 @@
 <template>
-  <SiteHeader />
-  <NavTabs />
-  <FormWidget />
+  <div class="wrapper">
+    <SiteHeader />
+    <NavTabs />
+    <FormWidget />
+  </div>  
 </template>
 
 <script>

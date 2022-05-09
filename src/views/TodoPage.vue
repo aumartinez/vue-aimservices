@@ -1,7 +1,9 @@
 <template>
-  <SiteHeader />
-  <NavTabs />
-  <TodoWidget />
+  <div class="wrapper">
+    <SiteHeader />
+    <NavTabs />
+    <TodoWidget />
+  </div>  
 </template>
 
 <script>

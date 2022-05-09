@@ -1,8 +1,10 @@
 <template>
-  <h1>Posts</h1>
-  <SiteHeader />
-  <NavTabs />
-  <PostsWidget />
+  <div class="wrapper">
+    <h1>Posts</h1>
+    <SiteHeader />
+    <NavTabs />
+    <PostsWidget />
+  </div>
 </template>
 
 <script>
