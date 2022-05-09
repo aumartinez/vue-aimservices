@@ -20,11 +20,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#app {
-  body {
-    background-color: blue;
-  }
-}
-</style>
